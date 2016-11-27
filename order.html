@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我要下单</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="CSS/order.css">
+</head>
+<body>
+    <div class="user_name">
+        <img src="order/name.svg" alt="name_icon">
+        <label for="user_name">收货人 :</label>
+        <input type="text" id="user_name">
+    </div>
+    <div class="user_address">
+        <img src="order/address.svg" alt="address_icon">
+        <label for="user_address">收货地址 :</label>
+        <input type="text" id="user_address">
+    </div>
+    <div class="user_tel">
+        <img src="order/tel.svg" alt="tel_icon">
+        <label for="user_tel">联系电话 :</label>
+        <input type="text" id="user_tel">
+    </div>
+    <div class="user_msg">
+        <img src="order/msg.svg" alt="msg_icon">
+        <label for="user_msg">留言 :</label>
+        <textarea name="user_msg" id="user_msg" cols="30" rows="10"></textarea>
+    </div>
+    <button type="submit" class="submit">提交</button>
+    <script src="JS/order.js"></script>
+</body>
+</html>

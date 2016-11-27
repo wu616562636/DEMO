@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+html,
+body,
+div,
+img,
+label,
+input,
+textarea {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: rgba(228, 228, 228, .35);
+    font-size: .15rem;
+    font-family: Arial;
+}
+img {
+    width: .5rem;
+}
+label {
+    font-size: .36rem;
+    font-weight: normal;
+    font-family: Arial;
+    margin-left: .15rem;
+}
+input {
+    text-align: center;
+    background: #fff;
+    font-weight: normal;
+    outline: 0;
+    border: 0;
+    border-radius: .1rem;
+    font-family: Arial;
+    box-shadow: .02rem .03rem .05rem #a7a7a7;
+}
+.user_name {
+    margin-top: 1rem;
+    margin-left: .55rem;
+    height: .66rem;
+    line-height: .66rem;
+}
+.user_name label {
+    position: relative;
+    top: -.15rem;
+    margin-right: .15rem;
+}
+.user_name img {
+    height: 100%;
+}
+.user_name input {
+    position: relative;
+    top: -.2rem;
+    width: 4.57rem;
+    height: .66rem;
+    font-size: .2rem;
+    line-height: .66rem;
+}
+.user_address {
+    margin-top: .5rem;
+    margin-left: .55rem;
+}
+.user_address img {
+    height: .66rem;
+}
+.user_address label {
+    position: relative;
+    top: -.12rem;
+}
+.user_address input {
+    display: block;
+    margin-top: .3rem;
+    resize: none;
+    margin-left: .3rem;
+    text-align: left;
+    padding-left: .77rem;
+    width: 5.03rem;
+    height: 1.1rem;
+    font-size: .2rem;
+    line-height: 1.1rem;
+}
+.user_tel {
+    height: .66rem;
+    margin-left: .55rem;
+    margin-top: .5rem;
+}
+.user_tel img {
+    height: 100%;
+}
+.user_tel label {
+    position: relative;
+    top: -.15rem;
+}
+.user_tel input {
+    width: 3.9rem;
+    height: .66rem;
+    text-align: center;
+    position: relative;
+    top: -.2rem;
+    margin-left: .1rem;
+    font-size: .15rem;
+    line-height: .66rem;
+}
+.user_msg {
+    margin-left: .55rem;
+    margin-top: .5rem;
+}
+.user_msg img {
+    height: .66rem;
+}
+.user_msg label {
+    position: relative;
+    top: -.2rem;
+}
+.user_msg textarea {
+    width: 5.28rem;
+    height: 2.5rem;
+    margin-top: .18rem;
+    margin-left: .3rem;
+    padding-left: .52rem;
+    padding-top: .2rem;
+    font-size: .15rem;
+    resize: none;
+    outline: 0;
+    border: 0;
+    border-radius: .1rem;
+    background: #fff;
+    font-weight: normal;
+    font-family: Arial;
+    box-shadow: .02rem .03rem .05rem #a7a7a7;
+}
+.submit {
+    margin-top: 1rem;
+    width: 5.85rem;
+    height: .76rem;
+    text-align: center;
+    margin-left: .85rem;
+    font-family: Arial;
+    border: none;
+    outline: none;
+    letter-spacing: .2rem;
+    background: #3399FF;
+    font-weight: bold;
+    font-size: .35rem;
+    border-radius: .3rem;
+    color: #fff;
+    box-shadow: .05rem .05rem .05rem #A2A2A2;
+}

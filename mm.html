@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script src="jquery-3.1.0.min.js"></script>
+    <script>
+        $(function(){
+            var totalHeight=0;
+            var range=50;
+            $(window).scroll(function () {
+                var scrollPos = $(window).scrollTop();    //滚动条距顶部距离(页面超出窗口的高度)
+                totalHeight = parseFloat($(window).height()) + parseFloat(scrollPos);
+                var PosY=$(document).height()-range;
+                if(PosY <= totalHeight){
+                    alert(1);
+                }
+            })
+        });
+    </script>
+    <style>
+        body{
+            height: 8000px;
+        }
+    </style>
+</head>
+<body>
+    <div>下拉加载更多</div>
+    <!--<div class="main" style="height:700px;overflow:auto;">-->
+       <!---->
+    <!--</div>-->
+    <!--<div class="child" style='border:1px solid red;margin-top:20px;color:grey;height:800px' ></div>-->
+</body>
+</html>

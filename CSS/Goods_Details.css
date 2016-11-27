@@ -1,0 +1,243 @@
+@charset "utf-8";
+
+html,
+body,
+div,
+img,
+p,
+span,
+a {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+body {
+    background: #fff;
+    font-size: .16rem;
+    font-family: Arial;
+}
+#goods_bg {
+    position: relative;
+    width: 100%;
+    height: 3rem;
+}
+#goods_bg img {
+    width: 100%;
+    height: 3rem;
+}
+#goods_bg .goods_name {
+    position: absolute;
+    top: 1.7rem;
+    padding: .05rem .15rem 0 .15rem;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .3rem;
+    font-family: Arial;
+    font-weight: normal;
+    border-radius: .3rem;
+    color: #000;
+    box-shadow: .05rem .05rem .05rem hsla(0,0%,100%,.3);
+    background: hsla(0,0%,100%,.3);
+}
+#goods_content {
+    margin-top: .1rem;
+    padding-bottom: .7rem;
+}
+#goods_content:after {
+    content: '.';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+#goods_content .intro {
+    float: left;
+    margin-top: .2rem;
+    margin-left: .25rem;
+    width: 2.65rem;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: .25rem;
+    color: #000;
+}
+#goods_content .assure {
+    float: right;
+    margin-right: .35rem;
+    color: #fff;
+    border-radius: .1rem;
+    padding: .07rem .1rem;
+    background: #6699ff;
+}
+#store_details {
+    margin-bottom: .25rem;
+    padding-bottom: .7rem;
+    border: .01rem solid #797979;
+    border-radius: .3rem;
+    box-shadow: .02rem .03rem .02rem #a7a7a7;
+}
+#store_details .store_msg:after {
+    content: '.';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+.store_msg img {
+    float: left;
+    margin-top: .4rem;
+    margin-left: .4rem;
+    margin-right: .4rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: .65rem;
+}
+.store_msg .store_name {
+    float: left;
+    position: relative;
+    margin-top: .65rem;
+    font-size: .5rem;
+    font-weight: normal;
+    font-family: Arial;
+    color: #000;
+}
+.store_name span {
+    position: absolute;
+    top: -.4rem;
+    right: -.9rem;
+    display: inline-block;
+    padding: 0 .1rem;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .16rem;
+    text-align: center;
+    color: #fff;
+    border-radius: .05rem;
+    background: #3399ff;
+}
+.effect {
+    margin-top: .2rem;
+    font-size: .4rem;
+    font-weight: normal;
+    font-family: Arial;
+    color: #000;
+}
+.effect > span {
+    float: left;
+    position: relative;
+    top: .07rem;
+    display: inline-block;
+    font-size: .75rem;
+}
+.effect:after{
+    content: '.';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+.effect .present {
+    float: left;
+    margin-left: 1rem;
+    padding-right: .3rem;
+}
+.present span {
+    display: block;
+    text-align: center;
+}
+.effect .fans {
+    float: left;
+    padding: 0 .4rem 0 .3rem;
+}
+.fans span {
+    display: block;
+    text-align: center;
+}
+.effect a {
+    float: right;
+    margin-top: .12rem;
+    margin-right: .12rem;
+    padding: .25rem .1rem;
+    border: .01rem solid #3399ff;
+    border-radius: .13rem;
+    font-size: .3rem;
+    color: #3398ca;
+}
+#comment .title {
+    margin-left: .4rem;
+    font-size: .5rem;
+    font-weight: normal;
+    font-family: Arial;
+    color: #000;
+}
+.title img {
+    position: relative;
+    top: .16rem;
+    margin-right: .12rem;
+    width: .6rem;
+}
+#comment #content {
+    margin-bottom: 1.79rem;
+}
+
+.more {
+    position: fixed;
+    bottom: .95rem;
+    width: 100%;
+    height: 1rem;
+    border-bottom: .02rem solid #666;
+    background: rgba(255, 255, 255, 0.9);
+}
+.more img {
+    margin-top: .1rem;
+    margin-left: 3.35rem;
+    width: .8rem;
+}
+#user_choice {
+    position: fixed;
+    bottom: 0;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    width: 100%;
+    height: .55rem;
+    font-size: .5rem;
+    background: rgba(246, 38, 65, 0.9);
+}
+#user_choice:after {
+    content: '.';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+#user_choice img {
+    display: block;
+    float: left;
+    margin-left: .2rem;
+    margin-right: .2rem;
+    width: .55rem;
+}
+#user_choice .price {
+    float: left;
+    margin-left: .4rem;
+    color: #fff;
+}
+#user_choice .like,
+#user_choice .buy {
+    position: relative;
+    top: -.2rem;
+    float: left;
+    height: .95rem;
+}
+#user_choice .like {
+    margin-left: .69rem;
+}
+.like div,
+.buy div {
+    margin-top: .2rem;
+    padding-right: .2rem;
+    height: .55rem;
+    color: #fff;
+    border-left: .01rem solid #fff;
+}
