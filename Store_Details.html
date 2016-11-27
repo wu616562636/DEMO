@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商家详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="CSS/Store_Details.css">
+    <script>
+        $(function () {
+            //全局变量
+            window.flag=$(".mind").attr("data-like");
+            //初始化按钮状态
+            if($(".mind").attr("data-like")==1){
+                $(".mind").text("取消关注");
+            }else{
+                $(".mind").text("我要关注");
+            }
+            //居中显示店名
+            $(".store_name").css("margin-left",function () {
+                return (document.body.clientWidth-$(this).width())/2+"px";
+            });
+            //关注模块
+            $(".mind").click(function () {
+                if(flag==0){
+                    flag=1;
+                }else{
+                    flag=0;
+                }
+                console.log(flag);
+                $(this).attr("data-like",flag);
+                $.ajax({
+                    url:"",
+                    type:"POST",
+                    data:{
+                        "type":"store",
+                        "like":$(this).attr("data-like")
+                    },
+                    dataType:"json",
+                    success:function (msg) {
+                        if($(this).attr("data-like")==1){
+                            $(this).text("我要关注");
+                        }else{
+                            $(this).text("取消关注");
+                        }
+                    },
+                    error:function () {
+                        alert("error");
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="store_details">
+        <img src="" alt="store_icon" class="store_icon">
+        <p class="store_name">优咕鱼11哈哈哈<span>估粉</span></p>
+        <div class="effect">
+            <p class="present">发布礼物<span>12</span></p>
+            <p class="fans">关注人数<span>30</span></p>
+        </div>
+        <button type="button" data-like="1" class="mind"></button>
+        <textarea class="msg" name="msg" id="msg" cols="30" rows="10" readonly>balabalababnbababababbabababababababababababababbababababababababbababab</textarea>
+        <p class="location"><img src="Store_Details/location.svg" alt="location"><span class="location_msg">杭州电子科技大学</span></p>
+        <p class="tel"><img src="Store_Details/tel.svg" alt="tel"><span class="tel_msg">123123</span></p>
+    </div>
+    <script src="JS/Store_Details.js"></script>
+</body>
+</html>

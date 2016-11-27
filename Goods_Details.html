@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>礼物详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="CSS/Goods_Details.css">
+    <link rel="stylesheet" href="iconfont.css">
+    <style>
+        button {
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+        }
+        .title {
+            margin-bottom:.05rem;
+        }
+        footer .top {
+            display: none;
+            height: 1rem;
+            width: 1rem;
+            position: fixed;
+            bottom: .9rem;
+            right:.6rem;
+            color: #fff;
+            background: hsla(140,100%,40%,.3);
+            border-radius: .5rem;
+            z-index: 99999;
+        }
+        .top .arrawup {
+            font-family: iconfont;
+            font-size: .5rem;
+        }
+        /*add*/
+        #comment {
+            margin-bottom: 2rem;
+        }
+        .comment {
+            padding-left: .2rem;
+            padding-top: .2rem;
+            padding-bottom: .2rem;
+            border-bottom: .01rem solid #ccc;
+        }
+        .comment:after {
+            content: '.';
+            display: block;
+            clear: both;
+            visibility: hidden;
+            height: 0;
+        }
+        .comment img{
+            float: left;
+            margin-left: .1rem;
+            margin-right: .25rem;
+            border-radius: .45rem;
+            width: .9rem;
+            height: .9rem;
+        }
+        .comment .content {
+            float: left;
+        }
+        .content .user_name {
+            font-size: .35rem;
+            font-family: Arial;
+            font-weight: normal;
+            color: #333;
+        }
+        .content .time {
+            margin-top: .12rem;
+            margin-bottom: .2rem;
+            font-size: .16rem;
+            font-family: Arial;
+            font-weight: normal;
+            color:#999;
+        }
+        .content .msg {
+            font-size: .16rem;
+            font-family: Arial;
+            font-weight: normal;
+            color: #000;
+        }
+    </style>
+    <script>
+        $(function () {
+            //全局变量
+            window.href="";
+            //关键字居中
+            $(".goods_name").css("left",function () {
+                return ($("#goods_bg").width()-$(this).width())/2
+            });
+            //跳转页面
+            $(".about").click(function () {
+                window.location.href="";
+            });
+            //返回顶部
+            $(window).scroll(function () {
+                if($(window).scrollTop() > 100){
+                    $(".top").fadeIn(1500);
+                }else{
+                    $(".top").fadeOut(1500);
+                }
+            });
+            $(".top").click(function () {
+                $("body,html").animate({
+                    scrollTop:0
+                },1000);
+                return false;
+            });
+            //加载更多
+            var totalHeight=0;
+            var range=50;
+            var page=0;
+            $(window).scroll(function () {
+//                测试
+                var b=[{"name":"hh","time":"11.8","content":"123"},{"name":"jk","time":"11.10","content":"1121223"}];
+                var scrollPos = $(window).scrollTop();    //滚动条距顶部距离(页面超出窗口的高度)
+                totalHeight = parseFloat($(window).height()) + parseFloat(scrollPos);
+                var PosY=$(document).height()-range;
+                if(PosY <= totalHeight){
+                    var html='';
+                    $.ajax({
+                        url:"",
+                        type:"POST",
+                        data:{
+                            "pageNum":"",
+                        },
+                        dataType:"json",
+                        success:function () {
+
+                        },
+                        error:function () {
+
+                        }
+                    });
+                    $.each(b,function (index,value) {
+                        html+='<div class="comment"> <img src="" alt="user_icon"> <div class="content"> <p class="user_name">'+value.name+'</p> <p class="time">'+value.time+'</p> <p class="msg">'+value.content+'</p> </div> </div>';
+                    });
+                    $("#content").append(html);
+                    page++;
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="goods_bg">
+        <img src="Goods_Details/test.png" alt="goods_name">
+        <p class="goods_name">星巴克牛奶杯</p>
+    </div>
+    <div id="goods_content">
+        <p class="intro">谢梦榴莲侧 留住青春的记忆把喇叭啊巴拉巴拉</p>
+        <p class="assure">质保一年</p>
+    </div>
+    <div id="store_details">
+        <div class="store_msg">
+            <a href="#"><img src="" alt="store_icon" class="store_icon"></a>
+            <p class="store_name">优估广泛店<span>估粉</span></p>
+        </div>
+        <div class="effect">
+            <p class="present"><span>12</span>发布礼物</p><span>|</span>
+            <p class="fans"><span>30</span>关注人数</p><span>|</span>
+            <a href="javascript:;" class="about">关于店家</a>
+        </div>
+    </div>
+    <div id="comment">
+        <p class="title"><img src="Goods_Details/myComment.svg" alt="comment">评价 :</p>
+        <div id="content">
+            <div class="comment">
+                <img src="" alt="user_icon">
+                <div class="content">
+                    <p class="user_name">周杰伦</p>
+                    <p class="time">2016-08-06 12: 11</p>
+                    <p class="msg">好看!美丽</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="" alt="user_icon">
+                <div class="content">
+                    <p class="user_name">周杰伦</p>
+                    <p class="time">2016-08-06 12: 11</p>
+                    <p class="msg">好看!美丽</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="" alt="user_icon">
+                <div class="content">
+                    <p class="user_name">周杰伦</p>
+                    <p class="time">2016-08-06 12: 11</p>
+                    <p class="msg">好看!美丽</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="" alt="user_icon">
+                <div class="content">
+                    <p class="user_name">周杰伦</p>
+                    <p class="time">2016-08-06 12: 11</p>
+                    <p class="msg">好看!美丽</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="" alt="user_icon">
+                <div class="content">
+                    <p class="user_name">周杰伦</p>
+                    <p class="time">2016-08-06 12: 11</p>
+                    <p class="msg">好看!美丽</p>
+                </div>
+            </div>
+        </div>
+        <a class="more" href="javascript:;"><img src="Goods_Details/more.svg" alt="more"></a>
+    </div>
+    <div id="user_choice">
+        <p class="price">￥15</p>
+        <a class="like" href="javascript:;"><div><img src="Goods_Details/like.svg" alt="like">我喜欢</div></a>
+        <a class="buy" href="javascript:;"><div><img src="Goods_Details/buy.svg" alt="buy">买买买</div></a>
+    </div>
+    <footer>
+        <button class="top"><span class="arrawup"></span></button>
+    </footer>
+    <script src="JS/Goods_Details.js"></script>
+</body>
+</html>

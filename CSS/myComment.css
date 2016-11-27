@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+html,
+body,
+div,
+label,
+img,
+textarea,
+button {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: rgba(228, 228, 228, .35);
+    font-size: .15rem;
+    font-family: Arial;
+}
+#comment label {
+    display: block;
+    margin-top: .75rem;
+    margin-left: .83rem;
+    margin-bottom: .3rem;
+    font-size: .45rem;
+    font-family: Arial;
+    font-weight: normal;
+    color: #000;
+}
+#comment img {
+    position: relative;
+    top: .1rem;
+    margin-right: .1rem;
+    width: .55rem;
+}
+#comment textarea {
+    margin-left: .825rem;
+    margin-bottom: .9rem;
+    padding-top: .17rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    width: 5.25rem;
+    height: 2.7rem;
+    background: #fff;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: .2rem;
+    color: #000;
+    resize: none;
+    border: .01rem solid #ccc;
+    border-radius: .2rem;
+}
+#submit {
+    margin-left: .75rem;
+    width: 5.85rem;
+    height: .8rem;
+    line-height: .8rem;
+    border: 0;
+    outline: 0;
+    border-radius: .3rem;
+    text-align: center;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: .39rem;
+    letter-spacing: .15rem;
+    box-shadow: .05rem .05rem .05rem #a2a2a2;
+    color: #fff;
+    background: #3399ff;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我要评论</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="CSS/myComment.css">
+    <script>
+        $(function () {
+            window.goods_id="";
+            $("#content").keyup(function () {
+                var len=$(this).val().length;
+                if(len > 200){
+                    alert("输入的字数不能超过200字哦！！");
+                    var text=$(this).val().substr(0,200);
+                    $(this).val(text);
+                }
+            });
+            $("#submit").click(function () {
+                $.ajax({
+                    type: "post",
+                    data: {
+                        "id":goods_id,
+                        "content":$("#content").val()
+                    },
+                    dataType: "json",
+                    url: "",
+                    beforeSend: function () {
+                        var content=$("#content").val();
+                        var len=content.length;
+                        if(len > 200){
+                            alert("输入的字数不能超过200字哦!!");
+                            var text=content.substr(0,200);
+                            $("#content").val(text);
+                            return false;
+                        }
+                    },
+                    success:function (data) {
+                        alert("success");
+                    },
+                    error:function (data) {
+                        alert("error");
+                    }
+                })
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="comment">
+        <label for="content"><img src="myComment/myComment.svg" alt="myComment">我要评论 :</label>
+        <textarea name="content" id="content" cols="30" rows="10">杭州电子科技大学balabal</textarea>
+    </div>
+    <span></span>
+    <button type="submit" id="submit">提交</button>
+    <script src="JS/myComment.js"></script>
+</body>
+</html>

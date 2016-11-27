@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script src="jquery-3.1.0.min.js"></script>
+    <script>
+        /*rem 自适应*/
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <style>
+
+        @keyframes line-spin-fade-loader {
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        html {
+            font-size: 16px;
+        }
+        #b {
+            margin-left: 3.4rem;
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        body {
+            background: red;
+        }
+        #b > div:nth-child(1){
+            top: 1.25rem;
+            left: 0;
+            -webkit-animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+            animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+        }
+        #b > div:nth-child(2){
+            top: .875rem;
+            left: .875rem;
+            transform: rotate(-45deg);
+            animation: line-spin-fade-loader 1.2s 0.24s infinite ease-in-out;
+        }
+        #b > div:nth-child(3){
+            top: 0;
+            left: 1.25rem;
+            transform: rotate(90deg);
+            animation: line-spin-fade-loader 1.2s 0.36s infinite ease-in-out;
+        }
+        #b > div:nth-child(4){
+            top: -.875rem;
+            left: .875rem;
+            transform: rotate(45deg);
+            animation: line-spin-fade-loader 1.2s 0.48s infinite ease-in-out;
+        }
+        #b > div:nth-child(5){
+            top: -1.25rem;
+            left: 0;
+            animation: line-spin-fade-loader 1.2s 0.6s infinite ease-in-out;
+        }
+        #b > div:nth-child(6){
+            top: -.875rem;
+            left: -.875rem;
+            transform: rotate(-45deg);
+            animation: line-spin-fade-loader 1.2s 0.72s infinite ease-in-out;
+        }
+        #b > div:nth-child(7){
+            top: 0;
+            left: -1.25rem;
+            transform: rotate(90deg);
+            animation: line-spin-fade-loader 1.2s 0.84s infinite ease-in-out;
+        }
+        #b > div:nth-child(8){
+            top: .875rem;
+            left: -.875rem;
+            transform: rotate(45deg);
+            animation: line-spin-fade-loader 1.2s 0.96s infinite ease-in-out;
+        }
+        .wait {
+            background-color: #fff;
+            border-radius: .125rem;
+            margin: .125rem;
+            position: absolute;
+            width: .3125rem;
+            height: .9375rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="b">
+        <div class="wait"></div>
+        <div class="wait"></div>
+        <div class="wait"></div>
+        <div class="wait"></div>
+        <div class="wait"></div>
+        <div class="wait"></div>
+        <div class="wait"></div>
+        <div class="wait"></div>
+    </div>
+</body>
+</html>

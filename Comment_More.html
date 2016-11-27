@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更多评论</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="CSS/Comment_More.css">
+    <link rel="stylesheet" href="iconfont.css">
+    <style>
+        button {
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+        }
+        footer .top {
+            display: none;
+            height: 1rem;
+            width: 1rem;
+            position: fixed;
+            bottom: .9rem;
+            right:.6rem;
+            color: #fff;
+            background: hsla(140,100%,40%,.3);
+            border-radius: .5rem;
+            z-index: 99999;
+        }
+        .top .arrawup {
+            font-family: iconfont;
+            font-size: .5rem;
+        }
+    </style>
+    <script>
+        $(function () {
+            //返回顶部
+            $(window).scroll(function () {
+                if($(window).scrollTop() > 100){
+                    $(".top").fadeIn(1500);
+                }else{
+                    $(".top").fadeOut(1500);
+                }
+            });
+            $(".top").click(function () {
+                $("body,html").animate({
+                    scrollTop:0
+                },1000);
+                return false;
+            });
+            //加载更多
+            var totalHeight=0;
+            var range=50;
+            var page=0;
+            $(window).scroll(function () {
+                //测试
+                var b=[{"name":"hh","time":"11.8","content":"123"},{"name":"jk","time":"11.10","content":"1121223"}];
+                var scrollPos = $(window).scrollTop();    //滚动条距顶部距离(页面超出窗口的高度)
+                totalHeight = parseFloat($(window).height()) + parseFloat(scrollPos);
+                var PosY=$(document).height()-range;
+                if(PosY <= totalHeight){
+                    var html='';
+//                    $.ajax({
+//                        url:"",
+//                        type:"POST",
+//                        data:{
+//                            "pageNum":"",
+//                        },
+//                        dataType:"json",
+//                        success:function () {
+//
+//                        },
+//                        error:function () {
+//
+//                        }
+//                    });
+//                    $.each(b,function (index,value) {
+//                        html+='<div class="comment"> <img src="" alt="user_icon"> <div class="content"> <p class="user_name">'+value.name+'</p> <p class="time">'+value.time+'</p> <p class="msg">'+value.content+'</p> </div> </div>';
+//                    });
+//                    $("#more").append(html);
+                    page++;
+                }
+            });
+            $(".more").click(function () {
+                window.location.href="";
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="more">
+        <div class="comment">
+            <img src="" alt="user_icon">
+            <div class="content">
+                <p class="user_name">周杰伦</p>
+                <p class="time">2016-08-06 12: 11</p>
+                <p class="msg">好看!美丽</p>
+            </div>
+        </div>
+        <div class="comment">
+            <img src="" alt="user_icon">
+            <div class="content">
+                <p class="user_name">周杰伦</p>
+                <p class="time">2016-08-06 12: 11</p>
+                <p class="msg">好看!美丽</p>
+            </div>
+        </div>
+        <div class="comment">
+            <img src="" alt="user_icon">
+            <div class="content">
+                <p class="user_name">周杰伦</p>
+                <p class="time">2016-08-06 12: 11</p>
+                <p class="msg">好看!美丽</p>
+            </div>
+        </div>
+        <div class="comment">
+            <img src="" alt="user_icon">
+            <div class="content">
+                <p class="user_name">周杰伦</p>
+                <p class="time">2016-08-06 12: 11</p>
+                <p class="msg">好看!美丽</p>
+            </div>
+        </div>
+        <div class="comment">
+            <img src="" alt="user_icon">
+            <div class="content">
+                <p class="user_name">周杰伦</p>
+                <p class="time">2016-08-06 12: 11</p>
+                <p class="msg">好看!美丽</p>
+            </div>
+        </div>
+        <div class="comment">
+            <img src="" alt="user_icon">
+            <div class="content">
+                <p class="user_name">周杰伦</p>
+                <p class="time">2016-08-06 12: 11</p>
+                <p class="msg">好看!美丽</p>
+            </div>
+        </div>
+        <div class="comment">
+            <img src="" alt="user_icon">
+            <div class="content">
+                <p class="user_name">周杰伦</p>
+                <p class="time">2016-08-06 12: 11</p>
+                <p class="msg">好看!美丽</p>
+            </div>
+        </div>
+        <div class="comment">
+            <img src="" alt="user_icon">
+            <div class="content">
+                <p class="user_name">周杰伦</p>
+                <p class="time">2016-08-06 12: 11</p>
+                <p class="msg">好看!美丽</p>
+            </div>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="more"><img src="Comment_More/more.svg" alt="more"></a>
+    <div class="loading">loading</div>
+    <footer>
+        <button class="top"><span class="arrawup"></span></button>
+    </footer>
+    <script src="JS/Comment_More.js"></script>
+</body>
+</html>
